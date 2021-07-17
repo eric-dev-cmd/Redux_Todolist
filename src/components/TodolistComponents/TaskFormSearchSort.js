@@ -7,11 +7,7 @@ class TaskFormSearchSort extends Component {
     return (
       <div className="row mt-3">
         <Search />
-        <Sort
-          onReceiveSort={this.props.onReceiveSort}
-          onReceiveSortBy={this.props.onReceiveSortBy}
-          onReceiveSortValue={this.props.onReceiveSortValue}
-        />
+        <Sort />
       </div>
     );
   }

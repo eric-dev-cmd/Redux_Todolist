@@ -9,23 +9,10 @@ class Todolist extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      filter: {
-        name: "",
-        status: -1,
-      },
-      keywords: "",
       sortBy: "name",
       sortValue: 1,
     };
   }
-  // componentWillMount() {
-  //   if (localStorage && localStorage.getItem("tasks")) {
-  //     var tasks = JSON.parse(localStorage.getItem("tasks"));
-  //     this.setState({
-  //       tasks: tasks,
-  //     });
-  //   }
-  // }
   onGenerateData = () => {
     var tasks = [
       {
@@ -91,9 +78,6 @@ class Todolist extends Component {
     });
   };
 
-
-
-
   // onReceiveSort = (sortBy, sortValue) => {
   //   // console.log(sortBy + " _ " + sortValue);
   //   this.setState({
@@ -108,23 +92,7 @@ class Todolist extends Component {
     var { isDisplayForm } = this.props;
 
     // // console.log(sortBy, sortValue);
-    // if (sortBy === "name") {
-    //   tasks.sort((a, b) => {
-    //     if (a.name > b.name) {
-    //       return sortValue;
-    //     } else if (a.name < b.name) {
-    //       return -sortValue;
-    //     } else return 0;
-    //   });
-    // } else {
-    //   tasks.sort((a, b) => {
-    //     if (a.status > b.status) {
-    //       return -sortValue;
-    //     } else if (a.status < b.status) {
-    //       return sortValue;
-    //     } else return 0;
-    //   });
-    // }
+    // 
 
     // var tasks = this.state.tasks
     return (
@@ -166,22 +134,11 @@ class Todolist extends Component {
                     <i className="fas fa-user-plus me-2"></i>Generate Data
                   </button> */}
                   {/* Task Form Search && Sort */}
-                  <TaskFormSearchSort
-                    // onReceiveSearch={this.onReceiveSearch}
-                    onReceiveSort={this.onReceiveSort}
-                    onReceiveSortBy={sortBy}
-                    onReceiveSortValue={sortValue}
-                  />
+                  <TaskFormSearchSort />
                   {/* Task List  */}
                   <div className="row mt-3">
                     <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                      <TaskList
-                        // tasks={tasks}
-                        // onReceiveUpdateStatus={this.onSetUpdateStatus}
-                        onReceiveDelete={this.onSetDelete}
-                        onReceiveUpdate={this.onSetUpdate}
-                        onReceiveChangeFilterTable={this.onSetChangeFilterTable}
-                      />
+                      <TaskList />
                     </div>
                   </div>
                 </div>

@@ -34,13 +34,13 @@ class TaskItem extends Component {
           </span>
         </td>
         <td className="text-center">
-          <a
+          <button
             type="button"
             className="btn btn-lg btn-outline-danger"
             onClick={this.onSetUpdate}
           >
             <i className="far fa-user-edit me-2"></i>Update
-          </a>
+          </button>
           &nbsp;
           <button
             type="button"
